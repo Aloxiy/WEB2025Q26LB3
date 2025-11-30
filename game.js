@@ -421,15 +421,15 @@ function createTileDOM(tile, r, c) {
     row.className = 'leader-row';
     
     const left = document.createElement('div');
-    left.textContent = `${idx + 1}. ${it.name} score: ${it.score}`;
+    // left.textContent = `${idx + 1}. ${it.name} score: ${it.score}`;
     
-    const right = document.createElement('div');
+    // const right = document.createElement('div');
     const d = new Date(it.date);
-    right.textContent = d.toLocaleString();
+    // right.textContent = d.toLocaleString();
+    left.textContent = `${idx + 1}. ${it.name} score: ${it.score} date: ${d.toLocaleString()}`;
     
     row.appendChild(left);
-
-    row.appendChild(right);
+    // row.appendChild(right);
     leadersList.appendChild(row);
   });
 }
