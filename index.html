@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2048 — Simple</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">2048</h1>
+      <div class="top-right">
+        <div class="score">
+          <div class="label">Счёт</div>
+          <div id="score">0</div>
+        </div>
+        <div class="score">
+          <div class="label">Рекорд</div>
+          <div id="best">0</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="controls">
+      <button id="newBtn" title="Новая игра">Новая</button>
+      <button id="undoBtn" title="Отмена">Отмена</button>
+      <button id="leadersBtn" title="Лидерборд">Лидерборд</button>
+    </div>
+
+    <div class="board-wrap">
+      <div id="board" class="board" aria-label="Игровое поле"></div>
+    </div>
+
+    <div id="mobile-controls" class="mobile-controls" aria-hidden="true">
+      <button data-dir="up">▲</button>
+      <div class="row">
+        <button data-dir="left">◀</button>
+        <button data-dir="down">▼</button>
+        <button data-dir="right">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="gameover" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h2>Игра окончена</h2>
+      <p id="gameover-msg">Нет возможных ходов</p>
+      <label for="player-name">Имя:</label>
+      <input id="player-name" type="text" maxlength="30" />
+      <div class="modal-actions">
+        <button id="saveScoreBtn">Сохранить</button>
+        <button id="newAfterGameBtn">Новая</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="leaders" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h2>Топ-10</h2>
+      <div id="leadersList" class="leaders-list"></div>
+      <div class="modal-actions">
+        <button id="closeLeadersBtn">Закрыть</button>
+        <button id="clearLeadersBtn">Очистить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
